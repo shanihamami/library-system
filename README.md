@@ -1,20 +1,16 @@
 # Library Microservices System
 
-A microservices-based library management system built using **Spring Boot**. The system is designed to handle the addition of books, borrowing books, and future notification services.
+A basic library management system that allows users to add books, borrow books, and view the list of available books.
 
 ## Overview
 
 This project follows a **microservices architecture** with two main services:
-- **Book Service**: Allows adding new books and viewing the list of available books.
-- **Borrow Service**: Allows users to borrow books if available.
-
-### Features
-- **Book Service**: Add and view books.
-- **Borrow Service**: Borrow books based on availability.
+- **Book Service**: Allows adding new books and viewing the list of books.
+- **Borrow Service**: Allows users to borrow books if available, and view the list of available books.
 - **Microservices Design**: Communicating via Feign Client.
 
 ### Future Enhancements
-The following improvements are planned to enhance functionality and optimize the system:
+The following improvements were planned to enhance functionality and optimize the system:
 - **Notification Service**: A separate service to send notifications for overdue books and alert users about return dates.
 - **Establish JDBC Connections**: Add support for both **SQL** and **MongoDB**.
 - **Borrow Service Enhancements**:
