@@ -1,0 +1,8 @@
+CREATE TABLE books (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    genre VARCHAR(100),
+    is_borrowed BOOLEAN NOT NULL DEFAULT FALSE,
+    due_date DATE
+);
