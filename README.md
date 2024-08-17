@@ -16,8 +16,8 @@ This project follows a **microservices architecture** with two main services:
 
 ### Future Enhancements
 The following improvements were planned to enhance functionality and optimize the system:
-- **Notification Service**: A separate service to send notifications for overdue books and alert users about return dates.
 - **Establish JDBC Connections**: Add support for both **SQL** and **MongoDB**.
+- **Notification Service**: A separate service to send notifications for overdue books and alert users about return dates.
 - **Borrow Service Enhancements**:
   - Show when a borrowed book will be available again.
   - Allow dynamic handling of the due date, configurable for different products.
