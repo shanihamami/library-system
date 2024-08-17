@@ -5,6 +5,11 @@ import lombok.*;
 
 import java.time.LocalDate;
 
+
+/**
+ * Entity model for Book.
+ * Represents a book in the library system.
+ */
 @Entity
 @Table(name = "books")
 @Getter

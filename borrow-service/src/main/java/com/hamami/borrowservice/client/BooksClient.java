@@ -12,17 +12,15 @@ import java.util.List;
 import java.util.Map;
 
 @FeignClient(value = "book-service", url="http://localhost:8080")
-public interface BooksClient {
+public interface BooksClient extends BaseClient{
 
     @GetMapping("/api/books/{id}/isBorrowed")
-    boolean isBookBorrowed(@PathVariable Long id);
+    boolean isItemBorrowed(@PathVariable Long id);
 
     @PostMapping("/api/books/{id}/borrow")
-    void updateBookAsBorrowed(@PathVariable Long id, @RequestParam boolean isBorrowed, @RequestParam LocalDate dueDate);
+    void updateItemAsBorrowed(@PathVariable Long id, @RequestParam boolean isBorrowed, @RequestParam LocalDate dueDate);
 
     @GetMapping("/api/books/available")
     List<Map<String, Object>> getAvailableBooks();
-
-//    public void updateBorrowed
 
 }

@@ -1,6 +1,7 @@
 package com.hamami.bookservice.controller;
 
 import com.hamami.bookservice.dto.BookDto;
+import com.hamami.bookservice.exceptions.BookPersistenceException;
 import com.hamami.bookservice.model.Book;
 import com.hamami.bookservice.service.BookService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -13,6 +14,10 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * REST Controller for managing books.
+ * Provides endpoints for adding books, retrieving all books, and checking and updating book availability.
+ */
 @RestController
 @RequestMapping("/api/books")
 @RequiredArgsConstructor
@@ -22,7 +27,7 @@ public class BookController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Book addBook(@RequestBody BookDto bookDto) {
+    public Book addBook(@RequestBody BookDto bookDto) throws BookPersistenceException {
         return bookService.addBook(bookDto);
     }
 
@@ -32,19 +37,17 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
-    @Operation(hidden = true)
     @GetMapping("/available")
     @ResponseStatus(HttpStatus.OK)
     public List<Map<String, Object>> getAvailableBooks() {
         return bookService.getAvailableBooks();
     }
 
-    @Operation(hidden = true)
     @GetMapping("/{id}/isBorrowed")
     public boolean isBorrowed(@PathVariable Long id) {
         return bookService.isBorrowed(id);
     }
-    @Operation(hidden = true)
+
     @PostMapping("/{id}/borrow")
     public ResponseEntity<?> updateBookAsBorrowed(@PathVariable Long id, @RequestParam boolean isBorrowed, @RequestParam LocalDate dueDate) {
         try {

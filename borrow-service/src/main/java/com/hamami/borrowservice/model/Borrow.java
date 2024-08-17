@@ -10,6 +10,11 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+
+/**
+ * Entity model for Borrow.
+ * Represents a borrowing transaction in the library system.
+ */
 @Entity
 @Getter
 @Setter

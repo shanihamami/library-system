@@ -6,6 +6,11 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
+
+/**
+ * Data Transfer Object for borrow operations.
+ * Contains details necessary for managing a book borrowing transaction.
+ */
 @Setter
 @Getter
 @AllArgsConstructor

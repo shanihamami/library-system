@@ -5,6 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.time.LocalDate;
 import java.util.List;
 
+
+/**
+ * Repository interface for Book entity.
+ * Extends JpaRepository to provide basic CRUD operations and method-level querying capabilities.
+ */
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     // Query to find all books that are due on a specific date and are currently borrowed
