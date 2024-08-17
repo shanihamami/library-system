@@ -7,7 +7,12 @@ A basic library management system that allows users to add books, borrow books, 
 This project follows a **microservices architecture** with two main services:
 - **Book Service**: Allows adding new books and viewing the list of books.
 - **Borrow Service**: Allows users to borrow books if available, and view the list of available books.
+
+### Features
+- **Book Service**: Add and view books.
+- **Borrow Service**: Borrow books based on availability.
 - **Microservices Design**: Communicating via Feign Client.
+- **Database Integration**: Uses a **MySQL database** to store book data and borrowing information across services.
 
 ### Future Enhancements
 The following improvements were planned to enhance functionality and optimize the system:
